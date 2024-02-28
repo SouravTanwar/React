@@ -1,5 +1,5 @@
 import conf from "../conf/conf";
-import { Client, ID, Databases, Storage, Querry, Query } from "appwrite";
+import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 export class Service{
     client = new Client();
@@ -101,7 +101,7 @@ export class Service{
         try {
             return await this.bucket.createFile(
                 conf.appwiteBucketId,
-                ID.unique,
+                ID.unique(),
                 file
                 
             )
